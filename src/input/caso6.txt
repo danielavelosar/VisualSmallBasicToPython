@@ -1,0 +1,13 @@
+num1 = 0
+num2 = 0
+
+num1 = TextWindow.Read()
+num2 = TextWindow.Read()
+
+sumarNumeros()
+
+TextWindow.WriteLine(num3)
+
+Sub sumarNumeros
+ num3 = num1 + num2
+EndSub
