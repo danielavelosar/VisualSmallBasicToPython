@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class GrammarToText extends MyLanguageBaseListener{
+    public String [] args;
     public int numTabs=0;
     public String main = "";
 
@@ -14,6 +15,9 @@ public class GrammarToText extends MyLanguageBaseListener{
     Stack<String> objetosCreados = new Stack<String>();
 
     Stack<String> funcionesCreadas = new Stack<String>();
+    public GrammarToText(String [] args){
+        this.args = args;
+    }
     private void tab(int numTabs){
         while(numTabs>0){
             main = main.concat("    ");
@@ -1090,7 +1094,13 @@ public class GrammarToText extends MyLanguageBaseListener{
 
 public  void crearFuncion(String nombreFuncion, boolean params){
     try{
-        MyLanguageLexer lexer = new MyLanguageLexer(CharStreams.fromFileName("src/input/caso4.txt"));
+        //MyLanguageLexer lexer = new MyLanguageLexer(CharStreams.fromFileName("src/input/caso4.txt"));
+        MyLanguageLexer lexer;
+
+        if (args.length>0)
+            lexer = new MyLanguageLexer(CharStreams.fromFileName(args[0]));
+        else
+            lexer = new MyLanguageLexer(CharStreams.fromStream(System.in));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MyLanguageParser parser = new MyLanguageParser(tokens);
         ParseTree tree = parser.inicio();
