@@ -1,0 +1,51 @@
+
+Sub funcion
+    While ((-a[3]+5) < mi_funcion) Then
+         x = TextWindow.Read()
+    EndWhile
+
+    If ((3+5 > (4/(y-1))) And ((x <> (-17+(z*6.3))) Or (y <> (a/8)))) Then
+       x_0 = 2
+       ElseIf ("True") Then
+       ud =33
+
+       ElseIf (id <> id3) Then
+       ud =33
+
+       Else
+       ft[4][5]=56
+
+    EndIf
+EndSub
+
+For i = 0 To 10 Step 1
+   TextWindow.Write(i)
+   Goto id34
+EndFor
+i = 1
+start:
+TextWindow.WriteLine(i)
+i = i + 1
+If (i < 25) Then
+  Goto start
+EndIf
+
+
+Sub funcion
+    While ((-a[3]+5) < mi_funcion) Then
+         x = TextWindow.Read()
+    EndWhile
+
+    If ((3+5 > (4/(y-1))) And ((x <> (-17+(z*6.3))) Or (y <> (a/8)))) Then
+       x_0 = 2
+       ElseIf ("True") Then
+       ud =33
+
+       ElseIf (id <> id3) Then
+       ud =33
+
+       Else
+       ft[4][5]=56
+
+    EndIf
+EndSub
