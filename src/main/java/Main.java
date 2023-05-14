@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String [] args) throws Exception{
         try{
-            MyLanguageLexer lexer = new MyLanguageLexer(CharStreams.fromFileName("src/input/caso5.txt"));
+            MyLanguageLexer lexer = new MyLanguageLexer(CharStreams.fromFileName("src/input/caso6.txt"));
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             MyLanguageParser parser = new MyLanguageParser(tokens);
             ParseTree tree = parser.inicio();

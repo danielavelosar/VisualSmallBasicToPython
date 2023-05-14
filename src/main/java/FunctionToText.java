@@ -749,7 +749,7 @@ public class FunctionToText extends MyLanguageBaseListener{
                 MyLanguageParser.TipoContext newCtx = ctx.tipo();
                 if(newCtx.TKN_COLON() != null){
                     main = main.concat("\n");
-                    main = main.concat("tengo la etiqueta ");
+                    main = main.concat("# ");
                 }
             }
             if(ctx.ID().getText().equals("return")){
@@ -1008,7 +1008,7 @@ public class FunctionToText extends MyLanguageBaseListener{
         }
 
         if(ctx.ENDWHILE() != null){
-            main = main.concat(" y salgo del bucle \n");
+            main = main.concat(" \n");
         }
 
     };
@@ -1077,7 +1077,7 @@ public class FunctionToText extends MyLanguageBaseListener{
 
     public void visitIr(MyLanguageParser.IrContext ctx){
         if(ctx.GOTO() != null){
-            main = main.concat(" Salto a ");
+            main = main.concat("#go to ");
         }
 
         if(ctx.ID() != null){

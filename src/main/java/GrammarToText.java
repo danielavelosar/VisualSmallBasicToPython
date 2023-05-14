@@ -530,6 +530,20 @@ public class GrammarToText extends MyLanguageBaseListener{
                             main = main.concat(", end='')");
                         }
                     }
+                    if(ctx.ID().getText().equals("Read")){
+                        main = main.concat("input");
+                        if(ctx.TKN_LEFT_PAREN() != null){
+                            main = main.concat("(");
+                        }
+
+                        if(ctx.parametros() != null){
+                            visitParametros(ctx.parametros());
+                        }
+
+                        if(ctx.TKN_RIGHT_PAREN() != null){
+                            main = main.concat(", end='')");
+                        }
+                    }
 
                 }
             }
@@ -735,7 +749,7 @@ public class GrammarToText extends MyLanguageBaseListener{
                 MyLanguageParser.TipoContext newCtx = ctx.tipo();
                 if(newCtx.TKN_COLON() != null){
                     main = main.concat("\n");
-                    main = main.concat("tengo la etiqueta ");
+                    main = main.concat("# ");
                 }
             }
             if(ctx.ID().getText().equals("return")){
@@ -780,7 +794,7 @@ public class GrammarToText extends MyLanguageBaseListener{
         }
 
         if(ctx.TKN_COLON() != null){
-            main = main.concat(": en este punto");
+            main = main.concat(":");
 
         }
 
@@ -1060,11 +1074,11 @@ public class GrammarToText extends MyLanguageBaseListener{
 
     public void visitIr(MyLanguageParser.IrContext ctx){
         if(ctx.GOTO() != null){
-            main = main.concat(" Salto a ");
+            main = main.concat("#go to ");
         }
 
         if(ctx.ID() != null){
-            main = main.concat( ctx.ID().getText() );
+            main = main.concat( ctx.ID().getText() + "\n" );
         }
 
     };
